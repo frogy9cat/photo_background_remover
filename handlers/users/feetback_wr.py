@@ -5,15 +5,15 @@ from loader import dp
 from aiogram.dispatcher.filters.builtin import Text
 from aiogram import types
 from data.config import ADMINS
+from filters.PrivateFilter import IsPrivate
 
 
-
-@dp.message_handler(Text("Write to admin💬"))
+@dp.message_handler(IsPrivate(), Text("Write to admin💬"))
 async def bot_text_to_admin(message: types.Message):
     await message.answer(f"Пожалуйста, введите своё сообщение...")
     await FtBack.ft_text.set()
 
-@dp.message_handler(state = FtBack.ft_text)
+@dp.message_handler(IsPrivate(), state = FtBack.ft_text)
 async def text_to_admin(message: types.Message, state: FSMContext):
     await state.update_data({"ft_text" : str(message.text)})
     await message.answer("Ваше сообщение принято! Спасибо, что помогаете нам и даёте развиваться!", reply_markup=RBGbotKeyboard.Menu)
