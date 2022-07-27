@@ -9,6 +9,6 @@
 # ADMINS = env.list("ADMINS")  # adminlar ro'yxati
 # IP = env.str("ip")  # Xosting ip manzili
 
-ADMINS='486178287'
+ADMINS='[486178287]'
 BOT_TOKEN='5382365025:AAEulPbA2A2yHPD-2iXRDYBAaSt2oKtlTk0'
 ip='localhost'
