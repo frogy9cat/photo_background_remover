@@ -2,8 +2,8 @@
 import requests
 
 
-def rasm_remove(FILE_NAME):
-    rasm=''
+def bg_remove(FILE_NAME):
+    pht=''
     API_KEY ='mt4c1kecYJ1NqPrxxrSrBPFE'
 
 
@@ -16,7 +16,7 @@ def rasm_remove(FILE_NAME):
     headers={'X-Api-Key': API_KEY},
 )
     if response.status_code == requests.codes.ok:
-        rasm = response.content
+        pht = response.content
     else:
         print("Error:", response.status_code, response.text)
-    return rasm
+    return pht

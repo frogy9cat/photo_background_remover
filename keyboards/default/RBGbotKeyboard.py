@@ -3,13 +3,27 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 Menu = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="Remove background✂️🖼"),
+            KeyboardButton(text="Удалить фон✂️🖼"),
+    ],
+
+        [
+            KeyboardButton(text="Дополнительноℹ️")
+    ],
+        ],
+    resize_keyboard=True
+)
+
+
+Additional = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="Информация о боте❔")
     ],
         [
-            KeyboardButton(text="About❔")
+            KeyboardButton(text="Написать разработчикам💬")
     ],
         [
-            KeyboardButton(text="Write to admin💬")
+            KeyboardButton(text="Назад🔙")
     ],
         ],
     resize_keyboard=True
