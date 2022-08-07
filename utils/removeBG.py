@@ -4,7 +4,7 @@ import requests
 
 def bg_remove(FILE_NAME):
     pht=''
-    API_KEY ='mt4c1kecYJ1NqPrxxrSrBPFE'
+    API_KEY ='HZpeacfg1EBPiQBUn56CCzrW'
 
 
     response = requests.post(
