@@ -41,6 +41,8 @@ async def deleting_accepted(message: types.Message, state: FSMContext):
     if message.text == "та самая":
         db.delete_users()
         await message.answer("new start?)")
+    else:
+        await message.answer("Incorrect password.")
 #_______________________________________________________________________________
 
 
@@ -72,5 +74,5 @@ async def sending_advert(message: types.Message, state: FSMContext):
     count = db.count_users()[0]
     for user in users:
         user_id = user[0]
-    await bot.copy_message(user_id, message.chat.id, message.message_id)
-    await message.answer(f"Реклама была отправлена {count} пользователям.")
+        await bot.copy_message(user_id, message.chat.id, message.message_id)
+        await message.answer(f"Реклама была отправлена {count} пользователям.")

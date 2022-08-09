@@ -24,6 +24,7 @@ async def text_to_admin(message: types.Message, state: FSMContext):
     await state.finish()
     for admin in ADMINS:
         await dp.bot.send_message(admin, f"Сообщение от @{message.from_user.username} ({message.from_user.id}):\n\n\"{ft_text}\" ")
+        await message.answer("Сообщение было отправлено✅")
 #________________________________________________________________________________________________________________________________________
 
 
