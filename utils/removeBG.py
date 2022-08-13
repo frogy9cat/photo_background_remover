@@ -1,10 +1,10 @@
 # API_KEY ='mt4c1kecYJ1NqPrxxrSrBPFE'
 import requests
-from data.config import API_KEY
 
 def bg_remove(FILE_NAME):
     pht=''
-
+    API_KEY ='CN8aPsgjA1nM6SCViozRKb6k'
+    
     response = requests.post(
     'https://api.remove.bg/v1.0/removebg',
     data={
