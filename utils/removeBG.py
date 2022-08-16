@@ -7,6 +7,11 @@ def bg_remove(FILE_NAME):
     API_KEY ='HZpeacfg1EBPiQBUn56CCzrW'
 
 
+
+def bg_remove(FILE_NAME):
+    pht=''
+    API_KEY ='jknNnMMbiZSxaajtEiQbsTWc'
+    
     response = requests.post(
     'https://api.remove.bg/v1.0/removebg',
     data={
