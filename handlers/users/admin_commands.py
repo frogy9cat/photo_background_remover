@@ -8,7 +8,7 @@ from loader import dp, db, bot
 
 
 
-@dp.message_handler(Command('count'), chat_id = ADMINS)
+@dp.message_handler(Command('count'), chat_id = ADMINS[0])
 async def bot_count_users(message: types.Message):
     count = db.count_users()[0]
     await message.answer(f"Пользователей бота: {count}")
@@ -17,7 +17,7 @@ async def bot_count_users(message: types.Message):
 
 
 
-@dp.message_handler(IsPrivate(), Command("allusers"), chat_id = ADMINS)
+@dp.message_handler(IsPrivate(), Command("allusers"), chat_id = ADMINS[0])
 async def get_all_users(message: types.Message):
     users = db.select_all_users()
     allusers=''
@@ -29,7 +29,7 @@ async def get_all_users(message: types.Message):
 
 
 #.........................DATA BASE DELETE....................................
-@dp.message_handler(IsPrivate(), Command("DeleteDataBase"), chat_id = ADMINS)
+@dp.message_handler(IsPrivate(), Command("DeleteDataBase"), chat_id = ADMINS[0])
 async def bot_delete_data_base(message: types.Message, state: FSMContext):
     await message.answer(f"Пожалуйста, введите пароль создателя...")
     await state.set_state("allowing for DDB")
@@ -49,7 +49,7 @@ async def deleting_accepted(message: types.Message, state: FSMContext):
 
 
 
-@dp.message_handler(IsPrivate(), Command("commands"), chat_id = ADMINS)
+@dp.message_handler(IsPrivate(), Command("commands"), chat_id = ADMINS[0])
 async def bot_commands_for_admins(message: types.Message):
     text = "/count - the number of all users;\n/allusers - show all users and ids;\n/touser - send message to user."
 
@@ -69,10 +69,10 @@ async def send_ad_command(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state = "advertisement", content_types=types.ContentType.ANY)
 async def sending_advert(message: types.Message, state: FSMContext):
-    await state.finish()
     users = db.select_all_users()
     count = db.count_users()[0]
     for user in users:
         user_id = user[0]
         await bot.copy_message(user_id, message.chat.id, message.message_id)
     await message.answer(f"Реклама была отправлена {count} пользователям.")
+    await state.finish()
