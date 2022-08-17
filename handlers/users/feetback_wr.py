@@ -32,7 +32,7 @@ async def text_to_admin(message: types.Message, state: FSMContext):
 
 
 #......................................ANNWER GO FEETBACK................................................
-@dp.message_handler(IsPrivate(), Command('touser'), chat_id = ADMINS)
+@dp.message_handler(IsPrivate(), Command('touser'), chat_id = ADMINS[0])
 async def bot_cho(message: types.Message, state: FSMContext):
     await message.answer('Сообщение пользователю...')
     

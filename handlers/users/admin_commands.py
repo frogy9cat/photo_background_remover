@@ -1,4 +1,3 @@
-import asyncio
 from data.config import ADMINS
 from filters.PrivateFilter import IsPrivate
 from aiogram import types

@@ -9,14 +9,13 @@
 # ADMINS = env.list("ADMINS")  # adminlar ro'yxati
 # IP = env.str("ip")  # Xosting ip manzili
 
-# ADMINS=['486178287']
-# BOT_TOKEN='5382365025:AAEulPbA2A2yHPD-2iXRDYBAaSt2oKtlTk0'
-# ip='localhost'
+# import os
 
+# # .env fayl ichidan quyidagilarni o'qiymiz
+# BOT_TOKEN = str(os.environ.get("BOT_TOKEN"))  # Bot token
+# ADMINS = str(os.environ.get("ADMINS")).split()  # adminlar ro'yxati
+# IP = str(os.environ.get("ip"))  # Xosting ip manzili
 
-import os
-
-# .env fayl ichidan quyidagilarni o'qiymiz
-BOT_TOKEN = str(os.environ.get("BOT_TOKEN"))  # Bot token
-ADMINS = str(os.environ.get("ADMINS")).split()  # adminlar ro'yxati
-IP = str(os.environ.get("ip"))  # Xosting ip manzili
+ADMINS=['486178287']
+BOT_TOKEN='5382365025:AAH1JtCAEhPJZhaFg4RiwlX8zJn72-BuIUQ'
+ip='localhost'

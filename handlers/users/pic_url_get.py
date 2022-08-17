@@ -2,7 +2,6 @@ from aiogram import types
 from loader import dp
 from utils.getting_picture import get_picture
 from filters.PrivateFilter import IsPrivate
-from data.config import ADMINS
 
 
 @dp.message_handler(IsPrivate())
